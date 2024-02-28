@@ -15,11 +15,15 @@ class _SplashState extends State<Splash> {
   void initState() {
     // TODO: implement initState
     super.initState();
-      Timer(Duration(seconds: 4), () {
-        Navigator.push(context,MaterialPageRoute(builder: (context) => Question(),));
-      });
-
+    Timer(const Duration(seconds: 4), () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const Question(),
+          ));
+    });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,13 +31,15 @@ class _SplashState extends State<Splash> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             CircleAvatar(
               backgroundImage: NetworkImage(
                   'https://thumbs.dreamstime.com/b/male-hand-holding-megaphone-quiz-time-speech-bubble-loudspeaker-banner-business-marketing-advertising-vector-125104939.jpg'),
               radius: 100,
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Text('GET READY TO FEEL THE THUNDER',
                 style: TextStyle(fontWeight: FontWeight.bold)),
           ],
